@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie Buddy — Discover What To Watch</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+<script defer src="js/main.js"></script>
+
+<style>
+body {
+  font-family: 'Poiret One', cursive;
+}
+
+/* Cube container with perspective */
+.why-art {
+  display: grid;
+  place-items: center;
+  perspective: 600px; /* important for 3D */
+}
+
+/* Cube loader */
+.cube-loader {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinCube 5s linear infinite;
+}
+
+/* Cube faces */
+.cube-face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
+  opacity: 0.9;
+  animation: cubeColor 6s infinite alternate;
+}
+
+/* Position faces */
+.cube-front  { transform: rotateY(0deg) translateZ(50px); }
+.cube-back   { transform: rotateY(180deg) translateZ(50px); }
+.cube-right  { transform: rotateY(90deg) translateZ(50px); }
+.cube-left   { transform: rotateY(-90deg) translateZ(50px); }
+.cube-top    { transform: rotateX(90deg) translateZ(50px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* Spin animation */
+@keyframes spinCube {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Color change animation */
+@keyframes cubeColor {
+  0%   { background: #ff3f3f; }
+  25%  { background: #ff7a59; }
+  50%  { background: #e50914; }
+  75%  { background: #ffb347; }
+  100% { background: #ff3f3f; }
+}
+</style>
+</head>
+<body class="home-body">
+<header class="app-header">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Movie Buddy" class="brand-logo">
+    <span class="brand-text">Movie Buddy</span>
+  </a>
+  <nav class="nav">
+    <button class="nav-toggle" aria-label="menu">☰</button>
+    <div class="nav-row">
+      <ul class="nav-left">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="movies.html">Explore</a></li>
+        <li><a href="#why">Why Us</a></li>
+      </ul>
+      <ul class="nav-right">
+        <li class="auth-slot">
+          <a class="btn btn-light" href="login.html">log in</a>
+          <a class="btn btn-primary" href="signup.html">sign up</a>
+        </li>
+        <li class="profile-slot hidden">
+          <a href="movies.html" class="profile-chip"><span class="profile-initials"></span></a>
+          <button class="btn btn-ghost logout-btn">log out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <h1 class="hero-title">Find your next favorite</h1>
+    <p class="hero-sub">Smart picks for movies and series, tailored to your vibe.</p>
+    <div class="hero-cta">
+      <a href="movies.html" class="btn btn-primary btn-lg">Get started</a>
+      <a href="#why" class="btn btn-light btn-lg">Why Choose Us</a>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why-section">
+  <div class="why-wrap">
+    <div class="why-card">
+      <h2>Why Choose Us</h2>
+      <p>My Girlfriend babylee always wanted an app which could help us watch new movies or series, so I thought of this idea. Movie Buddy makes deciding what to watch fast, fun, and frustration-free.</p>
+      <ul class="why-list">
+        <li>Daily fresh picks with rich details</li>
+        <li>Tap genres to instantly view three curated titles</li>
+        <li>Beautiful, mobile-first design</li>
+        <li>Snappy 3D loading and smooth animations</li>
+      </ul>
+      <a href="movies.html" class="btn btn-dark">Start Exploring</a>
+    </div>
+    <div class="why-art">
+      <div class="cube-loader">
+        <div class="cube-face cube-front"></div>
+        <div class="cube-face cube-back"></div>
+        <div class="cube-face cube-right"></div>
+        <div class="cube-face cube-left"></div>
+        <div class="cube-face cube-top"></div>
+        <div class="cube-face cube-bottom"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© <span id="y"></span> Movie Buddy. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

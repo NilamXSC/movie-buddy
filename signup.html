@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie Buddy — Sign Up</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+
+<!-- Google Font: Merienda -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles/style.css">
+<script defer src="js/main.js"></script>
+<script defer src="js/auth.js"></script>
+
+<style>
+  /* Apply Merienda font to the entire signup page */
+  body.auth-body, 
+  body.auth-body h1, 
+  body.auth-body input, 
+  body.auth-body button, 
+  body.auth-body p, 
+  body.auth-body a {
+    font-family: 'Merienda', cursive;
+  }
+</style>
+</head>
+<body class="auth-body">
+<header class="app-header">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Movie Buddy" class="brand-logo">
+    <span class="brand-text">Movie Buddy</span>
+  </a>
+</header>
+
+<section class="auth-card">
+  <h1>Create Account</h1>
+  <form id="signup-form" class="auth-form">
+    <input type="text" id="signup-name" placeholder="full name" required>
+    <input type="email" id="signup-email" placeholder="email" required>
+    <input type="password" id="signup-password" placeholder="password (min 6 chars)" required minlength="6">
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+  <p class="auth-alt">Already have an account? <a href="login.html">log in</a></p>
+</section>
+
+<footer class="site-footer">
+  <p>© <span id="y"></span> Movie Buddy</p>
+</footer>
+</body>
+</html>

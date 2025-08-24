@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Buddy — Explore</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/movies.js"></script>
+  <style>
+    body, h1, h2, h3, p, a, button, .page, .movie-card, .genre-section, .genre-grid {
+      font-family: 'Poiret One', cursive;
+    }
+  </style>
+</head>
+<body class="app-body">
+
+  <!-- Loader Overlay -->
+  <div class="loader-overlay hidden" id="loader">
+    <div class="cube-stack">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <p class="loader-text">loading</p>
+  </div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Movie Buddy" class="brand-logo">
+      <span class="brand-text">Movie Buddy</span>
+    </a>
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="menu">☰</button>
+      <div class="nav-row">
+        <ul class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="movies.html">Explore</a></li>
+          <li><a href="index.html#why">Why Us</a></li>
+        </ul>
+        <ul class="nav-right">
+          <li class="auth-slot">
+            <a class="btn btn-light" href="login.html">log in</a>
+            <a class="btn btn-primary" href="signup.html">sign up</a>
+          </li>
+          <li class="profile-slot hidden">
+            <span class="profile-chip"><span class="profile-initials"></span></span>
+            <button class="btn btn-ghost logout-btn">log out</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page">
+
+    <!-- Welcome Section -->
+    <section class="welcome-slab">
+      <h1 class="page-title">Our Recommendation</h1>
+      <br>
+      <p class="page-sub">One Random Movie/Series At A Time</p>
+    </section>
+
+    <!-- Movie Section -->
+    <section class="movie-section">
+      <div class="movie-card" id="movie-card"></div>
+      <button id="refresh-btn" class="btn btn-primary mt">Show Another Movie</button>
+    </section>
+
+    <!-- Genre Section -->
+    <section class="genre-section">
+      <h2 class="section-title">Pick Your Vibe</h2>
+      <div class="genre-buttons"></div>
+    </section>
+
+    <section class="genre-grid" id="genre-movie-container"></section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Created by Nilam Chakraborty. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
