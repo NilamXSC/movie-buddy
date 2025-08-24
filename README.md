@@ -14,6 +14,13 @@ It lets users explore random movies, browse genres, and enjoy a responsive, mode
 - Loading animations & footer credits.
 
 ⚙️ Setup
+
 1. Clone the repo:
    ```bash
    git clone https://github.com/NilamXSC/moviemood.git
+
+2. Create an assets/ folder for images.
+
+3. Open index.html in a browser or use Live Server.
+
+4. Create and Fetch details using any of these (Omdb, IMDb, TmDb) 
