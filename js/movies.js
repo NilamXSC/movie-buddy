@@ -1,6 +1,5 @@
 const API_KEY = "d38e8f9e";
 
-// 150 movies per genre (examples, you can expand)
 const genreMovies = {
   Action: [
     "Mad Max: Fury Road", "John Wick", "Gladiator", "Die Hard", "The Dark Knight",
@@ -153,7 +152,6 @@ const genreMovies = {
   ]
 };
 
-// DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
   const movieCard = document.getElementById("movie-card");
@@ -163,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!loader || !movieCard || !genreButtonsContainer || !genreMovieContainer) return;
 
-  // Loader animation
   function showLoading() {
     loader.classList.add("active");
     loader.querySelector(".cube-stack")?.classList.remove("stopped");
@@ -174,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.classList.remove("active");
   }
 
-  // Fetch movie from OMDB
   async function fetchMovie(title) {
     try {
       const res = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`);
@@ -185,7 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Random movie for main card
   async function showRandomMovie() {
     showLoading();
     const timeout = setTimeout(() => hideLoading(), 10000);
@@ -215,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Random movies for genre
   async function showGenreMovies(genre) {
     genreMovieContainer.innerHTML = "";
     showLoading();
@@ -241,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
     hideLoading();
   }
 
-  // Genre buttons
   Object.keys(genreMovies).forEach(genre => {
     const btn = document.createElement("button");
     btn.textContent = genre;
@@ -251,6 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   refreshBtn.addEventListener("click", showRandomMovie);
 
-  // Initial load
   showRandomMovie();
+
 });
