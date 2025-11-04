@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Movie Buddy — Discover What To Watch</title>
+<title>Movie Buddy - Discover What To Watch</title>
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +17,12 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
-/* Cube container with perspective */
 .why-art {
   display: grid;
   place-items: center;
-  perspective: 600px; /* important for 3D */
+  perspective: 600px;
 }
 
-/* Cube loader */
 .cube-loader {
   width: 100px;
   height: 100px;
@@ -33,7 +31,6 @@ body {
   animation: spinCube 5s linear infinite;
 }
 
-/* Cube faces */
 .cube-face {
   position: absolute;
   width: 100px;
@@ -43,7 +40,6 @@ body {
   animation: cubeColor 6s infinite alternate;
 }
 
-/* Position faces */
 .cube-front  { transform: rotateY(0deg) translateZ(50px); }
 .cube-back   { transform: rotateY(180deg) translateZ(50px); }
 .cube-right  { transform: rotateY(90deg) translateZ(50px); }
@@ -51,13 +47,11 @@ body {
 .cube-top    { transform: rotateX(90deg) translateZ(50px); }
 .cube-bottom { transform: rotateX(-90deg) translateZ(50px); }
 
-/* Spin animation */
 @keyframes spinCube {
   0%   { transform: rotateX(0deg) rotateY(0deg); }
   100% { transform: rotateX(360deg) rotateY(360deg); }
 }
 
-/* Color change animation */
 @keyframes cubeColor {
   0%   { background: #ff3f3f; }
   25%  { background: #ff7a59; }
@@ -137,4 +131,5 @@ body {
   <p>© <span id="y"></span> Movie Buddy. All Rights Reserved.</p>
 </footer>
 </body>
+
 </html>
