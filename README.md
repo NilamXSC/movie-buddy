@@ -17,7 +17,7 @@ It lets users explore random movies, browse genres, and enjoy a responsive, mode
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/NilamXSC/moviemood.git
+   git clone https://github.com/NilamXSC/movie-buddy.git
 
 2. Create an assets/ folder for images.
 
