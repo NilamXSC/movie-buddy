@@ -1,4 +1,4 @@
-const API_KEY = "d38e8f9e";
+const API_KEY = "13a32140";
 
 const genreMovies = {
   Action: [
@@ -1199,6 +1199,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showRandomMovie();
 
 });
+
 
 
 
